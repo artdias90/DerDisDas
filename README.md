@@ -2,6 +2,8 @@
 Find the correct article
 
 
+![sample](https://github.com/artdias90/DerDisDas/blob/master/record.gif)
+
 ## Usage
 
 - install react-native globally
