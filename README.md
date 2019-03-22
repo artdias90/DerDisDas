@@ -11,3 +11,4 @@ Find the correct article
 - install dependencies
 - run `react-native run-ios` to launch simulator or
 - `react-native build-ios`and launch via Xcode to install on physical device
+- for Android connect your device and run `react-native run-android`
