@@ -8,7 +8,8 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import MyButton from './atoms/button.js';
+import MyButton from './atoms/my-button/my-button';
+import StreakText from './atoms/streak-text/streak-text';
 var customData = require('./words.json');
 import Button from 'react-native-button';
 
@@ -20,6 +21,7 @@ const instructions = Platform.select({
 });
 
 type Props = {};
+
 export default class App extends Component<Props> {
 
   constructor(props) {
@@ -48,6 +50,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+      <StreakText score={this.state.score} />
       <Text style={styles.score}>{this.state.score}</Text>
         <Text style={styles.welcome}>{Object.values(this.state.articles[this.state.currIndex])}</Text>
         <MyButton title="Der" onPress={() => this.evaluate('Der')} />
