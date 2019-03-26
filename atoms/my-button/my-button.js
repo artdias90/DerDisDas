@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet} from 'react-native';
-import Button from 'react-native-button';
+import { StyleSheet, Text} from 'react-native';
 
 class MyButton extends Component {
   constructor(props) {
@@ -9,12 +8,10 @@ class MyButton extends Component {
 
   render() {
     return (
-      <Button
-        style={styles.buttonStyles}
-        containerStyle={styles.containerStyle}
-        onPress={this.props.onPress}
-      >{this.props.title}
-      </Button>
+      <Text
+      style={styles.buttonStyles}
+    >{this.props.title}
+    </Text>
     )
   }
 }
@@ -22,17 +19,10 @@ class MyButton extends Component {
 const styles = StyleSheet.create({
   buttonStyles: {
     color: '#fff',
+    width: '90%',
+    backgroundColor: 'rgba(0,0,0,0)'
   },
 
-  containerStyle: {
-    margin: 20,
-    padding:10,
-    height:45,
-    width: '90%',
-    overflow:'hidden',
-    borderRadius:4,
-    backgroundColor: '#001970'
-  }
 });
 
 export default MyButton;

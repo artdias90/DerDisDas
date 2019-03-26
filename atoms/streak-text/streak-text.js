@@ -14,6 +14,20 @@ class StreakText extends Component {
     super(props)
   }
 
+  showStreakInfo = () => {
+    if (this.props.score > 0 && this.props.score <= 3 ) {
+      return streaks.Good;
+    } else if (this.props.score > 3 && this.props.score <= 8 ) {
+      return streaks.VeryGood;
+    } else if (this.props.score > 6 && this.props.score <= 14 ) {
+      return streaks.Excellent;
+    } else if (this.props.score > 14 ) {
+      return streaks.Godlike;
+    } else {
+      return ' ';
+    }
+  }
+
   updateTextColor = () => {
     if (this.props.score > 0 && this.props.score <= 3 ) {
       return {color: '#00600f'};
@@ -27,21 +41,6 @@ class StreakText extends Component {
       return '';
     }
   }
-
-  showStreakInfo = () => {
-    if (this.props.score > 0 && this.props.score <= 3 ) {
-      return streaks.Good;
-    } else if (this.props.score > 3 && this.props.score <= 8 ) {
-      return streaks.VeryGood;
-    } else if (this.props.score > 6 && this.props.score <= 14 ) {
-      return streaks.Excellent;
-    } else if (this.props.score > 14 ) {
-      return streaks.Godlike;
-    } else {
-      return '';
-    }
-  }
-
 
   render() {
     return (
@@ -58,7 +57,7 @@ const styles = StyleSheet.create({
   streak: {
     fontSize: 50,
     textAlign: 'center',
-    margin: 10,
+    overflow:'hidden'
   },
 });
 
